@@ -1,0 +1,136 @@
+/*
+Theme Name: Bridge
+Theme URI: http://demo.qodeinteractive.com/bridge/
+Description: Creative Multi-Purpose WordPress Theme
+Tags: creative, portfolio, multi-purpose, clean, retina, responsive, parallax, mega menu, blog, agency, business, fullscreen, modern, background video, ajax
+Author: Qode Interactive
+Author URI: http://www.qodethemes.com/
+Version: 17.2
+License: GNU General Public License
+License URI: licence/GPL.txt
+
+CSS changes can be made in files in the /css/ folder. This is a placeholder file required by WordPress, so do not delete it.
+
+*/
+.line {
+    z-index: 6;
+    background-color: rgb(0, 0, 0);
+    visibility: inherit;
+    transition: none 0s ease 0s;
+    text-align: inherit;
+    line-height: 26px;
+    border-width: 0px;
+    margin-top: 50px;
+    padding: 0px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    white-space: normal;
+    min-height: 1px;
+    min-width: 91px;
+    max-height: 1px;
+    max-width: 244px;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transform-origin: 50% 50% 0px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+.homesec2 {
+    margin-top:50px;
+}
+.homesec2-right {
+    margin-top:55px;
+}
+.homesec4 {
+    margin-top:50px;
+ }
+.bannermobilewrapper  {
+    padding: 60px 10px 30px 50px;
+}
+.bannermobilewrapper .text {
+    padding: 20px 20px 20px 0px;
+}
+
+.q_slider {display:none;}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+.tp-bgimg {
+    background-position: 67% 50%!important;
+}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+.homesec2 {
+    margin-top:150px;
+}
+.homesec2-right {
+    margin-top:100px;
+}
+.homesec3 {
+    margin-top:40px;
+}
+.mobileslide {display:none;}
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+.homesec2 {
+    margin-top:152px;
+}
+.homesec2-right {
+    margin-top:129px;
+}
+.homesec3 {
+    margin-top:52px;
+}
+.homesec4 {
+    margin-top:112px;
+    margin-bottom:60px;
+}
+.mobileslide {display:none;}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+/* Styles */
+}

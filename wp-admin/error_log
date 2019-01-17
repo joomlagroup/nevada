@@ -1,0 +1,5 @@
+[11-Jan-2019 04:45:10 UTC] WordPress database error Unknown column 'wp_' in 'field list' for query SELECT wp_
+[11-Jan-2019 05:24:31 UTC] PHP Warning:  sprintf(): Too few arguments in /home/studioacocom/future.studioaco.com.au/nevada/wp-admin/includes/class-bulk-upgrader-skin.php on line 150
+[11-Jan-2019 05:24:38 UTC] PHP Warning:  sprintf(): Too few arguments in /home/studioacocom/future.studioaco.com.au/nevada/wp-admin/includes/class-bulk-upgrader-skin.php on line 150
+[11-Jan-2019 05:24:45 UTC] PHP Warning:  sprintf(): Too few arguments in /home/studioacocom/future.studioaco.com.au/nevada/wp-admin/includes/class-bulk-upgrader-skin.php on line 150
+[11-Jan-2019 06:14:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/studioacocom/future.studioaco.com.au/nevada/wp-content/themes/nevada/includes/import/qode-import.php on line 2580

@@ -1,0 +1,13 @@
+
+
+header.sticky .header_bottom{
+    border-bottom: 1px solid rgba(229,229,229,1)
+}
+
+.qode_video_box .qode_video_image .qode_video_box_button_arrow{
+left: 52%;
+}
+
+.header_inner_right .side_menu_button a{
+    top: 3px
+}
