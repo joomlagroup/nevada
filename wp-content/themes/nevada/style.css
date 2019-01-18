@@ -134,3 +134,216 @@ and (min-width : 1224px) {
 and (min-width : 1824px) {
 /* Styles */
 }
+
+.wrap_members {
+    max-width: 800px;
+    margin: 0px auto 10px auto;
+}
+
+.margin_top_40 {
+    margin-top: 40px;
+}
+.wrap_members h4.lb_member {
+    font-size: 45px;
+    line-height: 50px;
+    padding-top: 30px;
+    margin-bottom: 40px;
+}
+
+.wrap_members h4.lb_munite {
+    font-size: 30px;
+    padding-top: 30px;
+    margin-bottom: 125px;
+}
+.wrap_members h4.lb_member .span1 {
+    display: block;
+}
+.wrap_members h4.lb_member .span2 {
+    display: block;
+    border-bottom: 1px solid #666;
+    display: inline-block;
+    padding-bottom: 30px;
+}
+.member_area ul {
+    font-family: "Lato";
+}
+.member_area ul li {
+    list-style: none;
+    margin: 3px 0px;
+}
+.member_area ul a {
+    font-size: 16px;
+}
+
+.member_area ul a.current_item {
+    font-weight: bold;
+}
+
+.list_pdf_file {
+    margin-bottom: 30px;
+}
+
+.list_pdf_file ul {
+    font-family: "Lato";
+}
+
+.list_pdf_file ul li{
+    list-style: none;
+    margin-bottom:12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.list_pdf_file ul li a{
+    font-size: 15px;
+    color: #666;
+}
+
+.list_pdf_file ul li a span {
+    color: #dfa057;
+}
+
+.list_pdf_file ul li a:hover {
+    color: #000;
+}
+
+.list_pdf_file ul li.hide_item {
+    display: none;
+}
+
+.list_pdf_file .show_more {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: rgb(18, 18, 18);
+    background-color: rgba(18, 18, 18, 0);
+    margin: 30px auto 0px auto;
+    display: block;
+    text-align: center;
+    border: 1px solid rgb(178, 178, 178);
+    width: 120px;
+    padding: 10px 0px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+
+.list_pdf_file .show_more:hover {
+    background: #d79d59;
+    border-color: #d79d59;
+    color: #fff;
+}
+
+.wrap_members  .pagination {
+    font-family: "Lato";
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.wrap_members  .pagination span {
+    font-weight: bold;
+}
+
+.wrap_members  .pagination  a, .wrap_members  .pagination span{
+    border: 1px solid #ddd;
+    padding: 3px 10px;
+    margin-right: 4px;
+}
+
+.members_login {
+    margin-top: 40px;
+}
+
+.members_login h3 {
+    margin: 0px 0px 30px 0px;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.members_login form label {
+    display: block;
+    padding-bottom: 7px;
+    font-size: 17px;
+    color: #666;
+}
+
+.members_login form #user_login,.members_login form #user_pass  {
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2);
+    padding: 7px 10px;
+    min-width: 208px;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+.members_login form p {
+    margin-top: 15px;
+}
+
+.members_login #wp-submit {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: rgb(18, 18, 18);
+    background-color: rgba(18, 18, 18, 0);
+    margin: 20px 0px 0px 0px;
+    display: block;
+    border: 1px solid rgb(178, 178, 178);
+    width: 120px;
+    padding: 10px 0px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+
+.members_login #wp-submit:hover {
+    background: #d79d59;
+    border-color: #d79d59;
+    color: #fff;
+}
+
+.main_logout {
+    margin-right: 10px;
+    font-family: "Lato";
+    font-size: 17px;
+}
+
+.main_logout a {
+    color: #dfa057;
+}
+
+@media only screen
+and (max-width : 768px){
+    .margin_top_40 {
+        margin-top: 10px;
+    }
+    .wrap_members h4.lb_member {
+        padding-top: 0px;
+    }
+
+    .wrap_members h4 {
+        border-bottom: 1px solid #666;
+    }
+
+    .wrap_members h4.lb_member {
+        font-size: 35px;
+        line-height: 37px;
+        margin-bottom: 20px;
+    }
+
+    .wrap_members h4.lb_munite {
+        margin-bottom: 17px;
+    }
+
+    .wrap_members h4.lb_member .span1 {
+        display: inline-block;
+    }
+
+    .wrap_members h4.lb_member .span2 {
+        padding-bottom: 23px;
+        border-bottom: none;
+    }
+
+    .wrap_members h4.lb_munite {
+        padding-top: 0px;
+    }
+}
