@@ -136,8 +136,8 @@ and (min-width : 1824px) {
 }
 
 .wrap_members {
-    max-width: 800px;
-    margin: 0px auto 10px auto;
+    max-width: 900px;
+    margin: 0px auto 40px auto !important;
 }
 
 .margin_top_40 {
@@ -151,16 +151,16 @@ and (min-width : 1824px) {
 }
 
 .wrap_members h4.lb_munite {
-    font-size: 30px;
+    font-size: 40px;
     padding-top: 30px;
-    margin-bottom: 125px;
+    margin-bottom: 117px;
 }
 .wrap_members h4.lb_member .span1 {
     display: block;
 }
 .wrap_members h4.lb_member .span2 {
     display: block;
-    border-bottom: 1px solid #666;
+    border-bottom: 2px solid #666;
     display: inline-block;
     padding-bottom: 30px;
 }
@@ -169,14 +169,16 @@ and (min-width : 1824px) {
 }
 .member_area ul li {
     list-style: none;
-    margin: 3px 0px;
+    margin: 10px 0px;
 }
 .member_area ul a {
-    font-size: 16px;
+    font-size: 19px;
+    color: #666;
 }
 
 .member_area ul a.current_item {
     font-weight: bold;
+    color: #000;
 }
 
 .list_pdf_file {
@@ -189,13 +191,13 @@ and (min-width : 1824px) {
 
 .list_pdf_file ul li{
     list-style: none;
-    margin-bottom:12px;
+    margin-bottom:20px;
     border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 }
 
 .list_pdf_file ul li a{
-    font-size: 15px;
+    font-size: 19px;
     color: #666;
 }
 
@@ -233,47 +235,71 @@ and (min-width : 1824px) {
     color: #fff;
 }
 
-.wrap_members  .pagination {
-    font-family: "Lato";
-    font-size: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.wrap_members  .pagination span {
-    font-weight: bold;
-}
-
-.wrap_members  .pagination  a, .wrap_members  .pagination span{
-    border: 1px solid #ddd;
-    padding: 3px 10px;
-    margin-right: 4px;
-}
-
 .members_login {
     margin-top: 40px;
 }
 
 .members_login h3 {
-    margin: 0px 0px 30px 0px;
+    margin: 20px 0px 30px 0px;
     text-transform: capitalize;
     color: #333;
 }
 
+.members_login form {
+    position: relative;
+    padding-bottom: 80px;
+}
+
 .members_login form label {
+    height: 26px;
+    width: 30%;
+    float: left;
     display: block;
-    padding-bottom: 7px;
-    font-size: 17px;
+}
+
+.members_login .login-remember {
+    position: absolute;
+    right: 116px;
+    bottom: 33px;
+}
+
+.members_login .login-remember label{
+    width: 100%;
+}
+
+.members_login p.login-submit {
+    position: absolute;
+    bottom: 30px;
+    right: 0px;
+}
+
+.members_login p.login-submit #wp-submit {
+    background: #ebebeb;
+    padding: 7px 20px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(64, 64, 64, 0.1);
+    font-weight: 600;
     color: #666;
+    cursor: pointer;
+}
+
+.members_login form p:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .members_login form #user_login,.members_login form #user_pass  {
     border: 1px solid #d4d4d4;
     box-shadow: 0 1px 2px 0 rgba(180, 180, 180, 0.2);
-    padding: 7px 10px;
+    padding-left: 5px !important;
     min-width: 208px;
-    border-radius: 8px;
+    border-radius: 3px;
     font-size: 17px;
+    width: 65%;
+    float: right;
+    padding: 6px 5px;
 }
 
 .members_login form p {
@@ -281,24 +307,11 @@ and (min-width : 1824px) {
 }
 
 .members_login #wp-submit {
-    cursor: pointer;
-    text-transform: uppercase;
-    color: rgb(18, 18, 18);
-    background-color: rgba(18, 18, 18, 0);
-    margin: 20px 0px 0px 0px;
-    display: block;
-    border: 1px solid rgb(178, 178, 178);
-    width: 120px;
-    padding: 10px 0px;
-    font-size: 11px;
-    font-weight: 700;
-    font-family: 'Lato', sans-serif;
+
 }
 
 .members_login #wp-submit:hover {
-    background: #d79d59;
-    border-color: #d79d59;
-    color: #fff;
+
 }
 
 .main_logout {
@@ -311,6 +324,20 @@ and (min-width : 1824px) {
     color: #dfa057;
 }
 
+.content_post {
+    margin-bottom: 30px;
+}
+
+.content_post p {
+    color: #666;
+}
+
+ul.list_members {
+    border-bottom: 2px solid #666;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
 @media only screen
 and (max-width : 768px){
     .margin_top_40 {
@@ -321,7 +348,7 @@ and (max-width : 768px){
     }
 
     .wrap_members h4 {
-        border-bottom: 1px solid #666;
+        border-bottom: 2px solid #666;
     }
 
     .wrap_members h4.lb_member {
@@ -345,5 +372,13 @@ and (max-width : 768px){
 
     .wrap_members h4.lb_munite {
         padding-top: 0px;
+    }
+
+    .members_login form label {
+        width: 100%;
+    }
+
+    .members_login form #user_login, .members_login form #user_pass {
+        width: 95%;
     }
 }

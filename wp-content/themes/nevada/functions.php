@@ -3317,23 +3317,23 @@ if(!function_exists('qode_add_grid_lines')) {
 // Creating a Deals Custom Post Type
 function create_custom_post_type_members() {
     $labels = array(
-        'name'                => __( 'Members' ),
-        'singular_name'       => __( 'Member'),
-        'menu_name'           => __( 'Members'),
-        'parent_item_colon'   => __( 'Parent Members'),
-        'all_items'           => __( 'All Members'),
-        'view_item'           => __( 'View Member'),
-        'add_new_item'        => __( 'Add New Member'),
+        'name'                => __( 'Member Area' ),
+        'singular_name'       => __( 'Member Area'),
+        'menu_name'           => __( 'Member Area'),
+        'parent_item_colon'   => __( 'Parent Area'),
+        'all_items'           => __( 'All Member Area'),
+        'view_item'           => __( 'View Member Area'),
+        'add_new_item'        => __( 'Add New Member Area'),
         'add_new'             => __( 'Add New'),
-        'edit_item'           => __( 'Edit Member'),
-        'update_item'         => __( 'Update Member'),
-        'search_items'        => __( 'Search Members'),
+        'edit_item'           => __( 'Edit Member Area'),
+        'update_item'         => __( 'Update Member Area'),
+        'search_items'        => __( 'Search Member Area'),
         'not_found'           => __( 'Not found'),
         'not_found_in_trash'  => __( 'Not found in Trash')
     );
     $args = array(
-        'label'               => __( 'Members'),
-        'description'         => __( 'Members'),
+        'label'               => __( 'Member Area'),
+        'description'         => __( 'Member Area'),
         'labels'              => $labels,
         'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
         'public'              => true,
@@ -3353,67 +3353,5 @@ function create_custom_post_type_members() {
 }
 add_action( 'init', 'create_custom_post_type_members', 0 );
 
-
-function devvn_wp_corenavi($custom_query = null, $paged = null) {
-    global $wp_query;
-    if($custom_query) $main_query = $custom_query;
-    else $main_query = $wp_query;
-    $paged = ($paged) ? $paged : get_query_var('paged');
-    $big = 999999999;
-    $total = isset($main_query->max_num_pages)?$main_query->max_num_pages:'';
-    if($total > 1) echo '<div class="pagenavi">';
-    echo paginate_links( array(
-        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-        'format' => '?paged=%#%',
-        'current' => max( 1, $paged ),
-        'total' => $total,
-        'mid_size' => '10', // Số trang hiển thị khi có nhiều trang trước khi hiển thị ...
-        'prev_text'    => __('Prev','devvn'),
-        'next_text'    => __('Next','devvn'),
-    ) );
-    if($total > 1) echo '</div>';
-}
-
-add_action( 'wp_ajax_loadpost', 'loadpost_init' );
-add_action( 'wp_ajax_nopriv_loadpost', 'loadpost_init' );
-function loadpost_init() {
-
-    if ( !wp_verify_nonce( $_REQUEST['nonce'], "check_security_ajax")) {
-        exit("No naughty business please");
-    }
-
-    $post_id = (int)$_REQUEST["post_id"];
-    if($post_id){
-        $pdfs = get_field('pdf',$post_id );
-        if($pdfs):
-            $limit_pdf =5;
-            echo '<ul>';
-            foreach ($pdfs as $key=>$pdf):
-                $title  = $pdf['title'];
-                $file_upload  = $pdf['file_upload'];
-                if($key >= $limit_pdf)
-                $text_hide = 'hide_item';
-                echo '<li class="clearfix '.$text_hide.'"><a href="'.$file_upload.'">'.$title.'<span class="pull-right">View</span></a></li>';
-            endforeach;
-            echo '</ul>';
-            if(count($pdfs)>5):
-                echo '<span class="show_more">Load More</span>';
-            endif;
-         endif;
-    }
-
-    $result = ob_get_clean(); //cho hết bộ nhớ đệm vào biến $result
-    wp_send_json_success($result); // trả về giá trị dạng json
-
-    die();//bắt buộc phải có khi kết thúc
-}
-
-add_action('wp_head', 'myplugin_ajaxurl');
-
-function myplugin_ajaxurl() {
-    echo '<script type="text/javascript">
-           var ajaxurl = "' . admin_url('admin-ajax.php') . '";
-         </script>';
-}
 
 add_filter('show_admin_bar', '__return_false');

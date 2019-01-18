@@ -4,13 +4,12 @@
 Template Name: Archive Members
 */
 
-$current_page = get_query_var('paged')?get_query_var('paged') : 1;
+
 $current_id_member = get_query_var('id');
 
 
 $page_id  = $post->ID;
-$page     = get_query_var('paged') ? get_query_var('paged') : 1;
-$args = array( 'post_type' => 'member', 'posts_per_page' => 13,'paged' => $page);
+$args = array( 'post_type' => 'member','posts_per_page' => -1);
 
 $loop = new WP_Query( $args );
 
@@ -18,8 +17,6 @@ global $wp_query;
 $query_obj = $wp_query->get_queried_object();
 
 $arr_id = array();
-
-
 
 ?>
 
@@ -37,15 +34,13 @@ $arr_id = array();
                     <ul class="list_members">
                         <?php
                         $i= 0;
-                        $limit = 13;
-                        $index = ($current_page - 1) * $limit +1;
+                        $index = 1;
                         while ( $loop->have_posts() ) : $loop->the_post();
                             $id = get_the_ID();
                             $arr_id[] = $id;
 
-                            $nonce = wp_create_nonce("check_security_ajax");
                             ?>
-                            <li><a data-nonce="<?php echo $nonce ?>"  class=" <?php if ( is_user_logged_in() ) echo 'link_detail_members'; ?> <?php if($i==0 and is_user_logged_in()) echo 'current_item' ?>" data-post_id="<?php the_ID(); ?>"> <?php echo sprintf("%02d", $index).' - '; ?>  <?php the_title(); ?></a></li>
+                            <li><a href="<?php the_permalink() ?>" class="<?php if($i==0 and is_user_logged_in()) echo 'current_item' ?>"> <?php echo sprintf("%02d", $index).' - '; ?>  <?php the_title(); ?></a></li>
                         <?php
                         $i++;
                         $index++;
@@ -53,28 +48,40 @@ $arr_id = array();
                         ?>
                     </ul>
 
-                    <div class="pagination clearfix">
-                        <div class="pull-left">
-                            <?php if (function_exists('devvn_wp_corenavi')) devvn_wp_corenavi($loop); ?>
-                        </div>
-                    </div>
-
                 </div>
                 <div class="vc_col-md-8">
                      <?php if ( ! is_user_logged_in() ): ?>
                          <?php
                          $args = array(
-                             'redirect' => home_url('/members')
+                             'redirect' => home_url('/members'),
+                             'label_username' => __( 'Username' ),
                          );
                          ?>
                           <div class="members_login">
+                              <p>This content is restricted to site members. If you are an existing user, please login</p>
                              <h3>Existing Users Log In</h3>
                               <?php
                              wp_login_form( $args );
                              ?>
                           </div>
                      <?php else: ?>
-                         <h4 class="lb_munite">Board Munites</h4>
+
+                             <?php
+                             $current_id = $arr_id[0];
+                             $args = array( 'post_type' => 'member','post__in' => array($current_id));
+                             $detail = new WP_Query( $args );
+                             if($detail->have_posts()){
+                                 while ( $detail->have_posts() ) { $detail->the_post();
+                                     echo '<h4 class="lb_munite">'.get_the_title().'</h4>';
+                                     if(get_the_content()){
+                                         echo '<div class="content_post clearfix">';
+                                         the_content();
+                                         echo '</div>';
+                                     }
+                                 }
+                             }
+                             ?>
+
                          <div class="list_pdf_file">
                              <?php
                              $limit_pdf =5;
@@ -88,7 +95,7 @@ $arr_id = array();
                                      $file_upload  = $pdf['file_upload'];
 
                                      ?>
-                                     <li class="clearfix <?php  if($key >= $limit_pdf) echo 'hide_item' ?>"><a href="<?php echo $file_upload ?>"><?php echo $title ?> <span class="pull-right">View</span></a></li>
+                                     <li class="clearfix <?php  if($key >= $limit_pdf) echo 'hide_item' ?>"><a target="_blank" href="<?php echo $file_upload ?>"><?php echo $title ?> <span class="pull-right">View</span></a></li>
                                  <?php
                                  endforeach;
                                  ?>
