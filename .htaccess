@@ -9,4 +9,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /nevada/index.php [L]
 </IfModule>
 
+RewriteCond %{REQUEST_FILENAME} -s
+RewriteRule ^wp-content/uploads/(.*)$ dl-file.php?file=$1 [QSA,L]
+
+
+
 # END WordPress
